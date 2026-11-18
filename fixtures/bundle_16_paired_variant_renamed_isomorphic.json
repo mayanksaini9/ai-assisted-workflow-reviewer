@@ -1,0 +1,312 @@
+{
+  "bundle_id": "bundle_16_paired_variant_renamed_isomorphic",
+  "description": "Reserved Paired Variant B: Renamed IDs and equivalent 1800s unit; semantically identical.",
+  "version": "1.0.0",
+  "source_requirements": [
+    {
+      "id": "REQ_MISSING",
+      "text": "No category specified -> manual review.",
+      "anchor": {
+        "file_path": "policy.md",
+        "section": null,
+        "line_number": 10,
+        "json_pointer": null,
+        "node_id": null
+      },
+      "condition_text": "missing(category)",
+      "condition": null,
+      "action": "manual_review",
+      "precedence": 1,
+      "exceptions": [],
+      "metadata": {}
+    },
+    {
+      "id": "REQ_URGENT",
+      "text": "Ticket marked urgent -> priority queue.",
+      "anchor": {
+        "file_path": "policy.md",
+        "section": null,
+        "line_number": 12,
+        "json_pointer": null,
+        "node_id": null
+      },
+      "condition_text": "urgency == 'urgent'",
+      "condition": null,
+      "action": "priority_queue",
+      "precedence": 2,
+      "exceptions": [],
+      "metadata": {}
+    },
+    {
+      "id": "REQ_WAIT",
+      "text": "Waiting duration >= 1800 seconds -> escalation.",
+      "anchor": {
+        "file_path": "policy.md",
+        "section": null,
+        "line_number": 14,
+        "json_pointer": null,
+        "node_id": null
+      },
+      "condition_text": "waiting >= 1800 seconds",
+      "condition": null,
+      "action": "escalation",
+      "precedence": 3,
+      "exceptions": [],
+      "metadata": {}
+    },
+    {
+      "id": "REQ_DEFAULT",
+      "text": "Default fallback -> normal queue.",
+      "anchor": {
+        "file_path": "policy.md",
+        "section": null,
+        "line_number": 16,
+        "json_pointer": null,
+        "node_id": null
+      },
+      "condition_text": "otherwise",
+      "condition": null,
+      "action": "normal_queue",
+      "precedence": 4,
+      "exceptions": [],
+      "metadata": {}
+    }
+  ],
+  "specification": {
+    "spec_id": "SPEC-RENAMED-2026",
+    "version": "1.0.0",
+    "rules": [
+      {
+        "rule_id": "REQ_MISSING",
+        "description": "No category -> manual review",
+        "condition_text": "missing(category)",
+        "condition": null,
+        "action": "manual_review",
+        "precedence": 1,
+        "location": {
+          "file_path": "spec.yaml",
+          "section": null,
+          "line_number": 5,
+          "json_pointer": null,
+          "node_id": null
+        }
+      },
+      {
+        "rule_id": "REQ_URGENT",
+        "description": "Urgent ticket -> priority queue",
+        "condition_text": "urgency == 'urgent'",
+        "condition": null,
+        "action": "priority_queue",
+        "precedence": 2,
+        "location": {
+          "file_path": "spec.yaml",
+          "section": null,
+          "line_number": 12,
+          "json_pointer": null,
+          "node_id": null
+        }
+      },
+      {
+        "rule_id": "REQ_WAIT",
+        "description": "Waiting duration >= 30 minutes -> escalation",
+        "condition_text": "waiting >= 30 minutes",
+        "condition": null,
+        "action": "escalation",
+        "precedence": 3,
+        "location": {
+          "file_path": "spec.yaml",
+          "section": null,
+          "line_number": 19,
+          "json_pointer": null,
+          "node_id": null
+        }
+      },
+      {
+        "rule_id": "REQ_DEFAULT",
+        "description": "Default fallback -> normal queue",
+        "condition_text": "otherwise",
+        "condition": null,
+        "action": "normal_queue",
+        "precedence": 4,
+        "location": {
+          "file_path": "spec.yaml",
+          "section": null,
+          "line_number": 26,
+          "json_pointer": null,
+          "node_id": null
+        }
+      }
+    ],
+    "created_at": null
+  },
+  "workflow_graph": {
+    "workflow_id": "WF-ROUTING-RENAMED",
+    "version": "1.0.0",
+    "entry_node_id": "node_entry",
+    "nodes": {
+      "node_entry": {
+        "node_id": "node_entry",
+        "node_type": "decision",
+        "action": null,
+        "branches": [
+          {
+            "branch_id": "b_r1_yes",
+            "condition_text": "missing(category)",
+            "condition": null,
+            "target_node_id": "node_manual",
+            "label": null
+          },
+          {
+            "branch_id": "b_r1_no",
+            "condition_text": "otherwise",
+            "condition": null,
+            "target_node_id": "node_eval_r2",
+            "label": null
+          }
+        ],
+        "rule_ref": "REQ_MISSING",
+        "location": {
+          "file_path": "workflow.json",
+          "section": null,
+          "line_number": null,
+          "json_pointer": null,
+          "node_id": "node_entry"
+        }
+      },
+      "node_manual": {
+        "node_id": "node_manual",
+        "node_type": "action",
+        "action": "manual_review",
+        "branches": [],
+        "rule_ref": "REQ_MISSING",
+        "location": {
+          "file_path": "workflow.json",
+          "section": null,
+          "line_number": null,
+          "json_pointer": null,
+          "node_id": "node_manual"
+        }
+      },
+      "node_eval_r2": {
+        "node_id": "node_eval_r2",
+        "node_type": "decision",
+        "action": null,
+        "branches": [
+          {
+            "branch_id": "b_r2_yes",
+            "condition_text": "urgency == 'urgent'",
+            "condition": null,
+            "target_node_id": "node_priority",
+            "label": null
+          },
+          {
+            "branch_id": "b_r2_no",
+            "condition_text": "otherwise",
+            "condition": null,
+            "target_node_id": "node_eval_r3",
+            "label": null
+          }
+        ],
+        "rule_ref": "REQ_URGENT",
+        "location": {
+          "file_path": "workflow.json",
+          "section": null,
+          "line_number": null,
+          "json_pointer": null,
+          "node_id": "node_eval_r2"
+        }
+      },
+      "node_priority": {
+        "node_id": "node_priority",
+        "node_type": "action",
+        "action": "priority_queue",
+        "branches": [],
+        "rule_ref": "REQ_URGENT",
+        "location": {
+          "file_path": "workflow.json",
+          "section": null,
+          "line_number": null,
+          "json_pointer": null,
+          "node_id": "node_priority"
+        }
+      },
+      "node_eval_r3": {
+        "node_id": "node_eval_r3",
+        "node_type": "decision",
+        "action": null,
+        "branches": [
+          {
+            "branch_id": "b_r3_yes",
+            "condition_text": "waiting >= 1800 seconds",
+            "condition": null,
+            "target_node_id": "node_escalation",
+            "label": null
+          },
+          {
+            "branch_id": "b_r3_no",
+            "condition_text": "otherwise",
+            "condition": null,
+            "target_node_id": "node_normal",
+            "label": null
+          }
+        ],
+        "rule_ref": "REQ_WAIT",
+        "location": {
+          "file_path": "workflow.json",
+          "section": null,
+          "line_number": null,
+          "json_pointer": null,
+          "node_id": "node_eval_r3"
+        }
+      },
+      "node_escalation": {
+        "node_id": "node_escalation",
+        "node_type": "action",
+        "action": "escalation",
+        "branches": [],
+        "rule_ref": "REQ_WAIT",
+        "location": {
+          "file_path": "workflow.json",
+          "section": null,
+          "line_number": null,
+          "json_pointer": null,
+          "node_id": "node_escalation"
+        }
+      },
+      "node_normal": {
+        "node_id": "node_normal",
+        "node_type": "action",
+        "action": "normal_queue",
+        "branches": [],
+        "rule_ref": "REQ_DEFAULT",
+        "location": {
+          "file_path": "workflow.json",
+          "section": null,
+          "line_number": null,
+          "json_pointer": null,
+          "node_id": "node_normal"
+        }
+      }
+    }
+  },
+  "code_snippets": [
+    {
+      "snippet_id": "snip_renamed_router",
+      "rule_ref": null,
+      "function_name": null,
+      "code": "def route_ticket(ticket):\n    # Implements REQ_MISSING: Missing category -> manual review\n    if ticket.get('category') is None:\n        return 'manual_review'\n    # Implements REQ_URGENT: Urgent ticket -> priority queue\n    elif ticket.get('urgency') == 'urgent':\n        return 'priority_queue'\n    # Implements REQ_WAIT: Waiting >= 30 minutes (1800s) -> escalation\n    elif ticket.get('waiting') >= 30:\n        return 'escalation'\n    # Implements REQ_DEFAULT: Normal queue\n    return 'normal_queue'\n",
+      "docstring": null,
+      "location": {
+        "file_path": "src/router.py",
+        "section": null,
+        "line_number": 1,
+        "json_pointer": null,
+        "node_id": null
+      }
+    }
+  ],
+  "approval_records": [],
+  "expected_verdict": "PASS",
+  "expected_defects": [],
+  "test_group": "reserved_evaluation"
+}

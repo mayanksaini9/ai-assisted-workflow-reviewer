@@ -1,0 +1,206 @@
+{
+  "eval_summary": {
+    "total_bundles": 16,
+    "tuning_bundles_count": 12,
+    "reserved_bundles_count": 4,
+    "correct_verdicts": 16,
+    "accuracy_percentage": 100.0,
+    "false_passes": 0,
+    "false_blocks": 0,
+    "incompletes": 3,
+    "precision": 100.0,
+    "recall": 100.0
+  },
+  "finding_quality": {
+    "total_counterexamples_synthesized": 8,
+    "valid_counterexamples_verified_by_oracle": 6,
+    "unsupported_or_hallucinated_findings_flagged": 1
+  },
+  "resource_usage": {
+    "total_runtime_ms": 14.57,
+    "avg_runtime_ms": 0.91,
+    "model_calls": 16,
+    "retries": 0,
+    "prompt_tokens": 2880,
+    "completion_tokens": 1360,
+    "client_mode": "fake_offline"
+  },
+  "detailed_results": [
+    {
+      "bundle_id": "bundle_01_valid_standard",
+      "is_reserved": false,
+      "expected_status": "PASS",
+      "actual_status": "PASS",
+      "correct": true,
+      "blocker_findings_count": 0,
+      "total_findings_count": 0,
+      "counterexamples_count": 0,
+      "runtime_ms": 1.13
+    },
+    {
+      "bundle_id": "bundle_02_valid_reordered_records",
+      "is_reserved": false,
+      "expected_status": "PASS",
+      "actual_status": "PASS",
+      "correct": true,
+      "blocker_findings_count": 0,
+      "total_findings_count": 0,
+      "counterexamples_count": 0,
+      "runtime_ms": 0.86
+    },
+    {
+      "bundle_id": "bundle_03_valid_unusual_formulation",
+      "is_reserved": false,
+      "expected_status": "PASS",
+      "actual_status": "PASS",
+      "correct": true,
+      "blocker_findings_count": 0,
+      "total_findings_count": 0,
+      "counterexamples_count": 0,
+      "runtime_ms": 0.84
+    },
+    {
+      "bundle_id": "bundle_04_defect_unapproved_threshold",
+      "is_reserved": false,
+      "expected_status": "CHANGES_REQUIRED",
+      "actual_status": "CHANGES_REQUIRED",
+      "correct": true,
+      "blocker_findings_count": 1,
+      "total_findings_count": 1,
+      "counterexamples_count": 1,
+      "runtime_ms": 0.94
+    },
+    {
+      "bundle_id": "bundle_05_defect_approval_conflict",
+      "is_reserved": false,
+      "expected_status": "CHANGES_REQUIRED",
+      "actual_status": "CHANGES_REQUIRED",
+      "correct": true,
+      "blocker_findings_count": 1,
+      "total_findings_count": 1,
+      "counterexamples_count": 0,
+      "runtime_ms": 0.88
+    },
+    {
+      "bundle_id": "bundle_06_defect_omitted_source_req",
+      "is_reserved": false,
+      "expected_status": "CHANGES_REQUIRED",
+      "actual_status": "CHANGES_REQUIRED",
+      "correct": true,
+      "blocker_findings_count": 1,
+      "total_findings_count": 1,
+      "counterexamples_count": 0,
+      "runtime_ms": 0.79
+    },
+    {
+      "bundle_id": "bundle_07_defect_precedence_inversion",
+      "is_reserved": false,
+      "expected_status": "CHANGES_REQUIRED",
+      "actual_status": "CHANGES_REQUIRED",
+      "correct": true,
+      "blocker_findings_count": 1,
+      "total_findings_count": 1,
+      "counterexamples_count": 1,
+      "runtime_ms": 0.86
+    },
+    {
+      "bundle_id": "bundle_08_defect_code_disagreement",
+      "is_reserved": false,
+      "expected_status": "CHANGES_REQUIRED",
+      "actual_status": "CHANGES_REQUIRED",
+      "correct": true,
+      "blocker_findings_count": 1,
+      "total_findings_count": 1,
+      "counterexamples_count": 1,
+      "runtime_ms": 0.87
+    },
+    {
+      "bundle_id": "bundle_09_defect_dead_branch_interaction",
+      "is_reserved": false,
+      "expected_status": "CHANGES_REQUIRED",
+      "actual_status": "CHANGES_REQUIRED",
+      "correct": true,
+      "blocker_findings_count": 6,
+      "total_findings_count": 6,
+      "counterexamples_count": 2,
+      "runtime_ms": 1.08
+    },
+    {
+      "bundle_id": "bundle_10_incomplete_unsupported_language",
+      "is_reserved": false,
+      "expected_status": "INCOMPLETE",
+      "actual_status": "INCOMPLETE",
+      "correct": true,
+      "blocker_findings_count": 0,
+      "total_findings_count": 1,
+      "counterexamples_count": 0,
+      "runtime_ms": 0.79
+    },
+    {
+      "bundle_id": "bundle_11_incomplete_missing_evidence",
+      "is_reserved": false,
+      "expected_status": "INCOMPLETE",
+      "actual_status": "INCOMPLETE",
+      "correct": true,
+      "blocker_findings_count": 0,
+      "total_findings_count": 1,
+      "counterexamples_count": 0,
+      "runtime_ms": 0.56
+    },
+    {
+      "bundle_id": "bundle_12_incomplete_prompt_injection",
+      "is_reserved": false,
+      "expected_status": "INCOMPLETE",
+      "actual_status": "INCOMPLETE",
+      "correct": true,
+      "blocker_findings_count": 0,
+      "total_findings_count": 1,
+      "counterexamples_count": 0,
+      "runtime_ms": 0.8
+    },
+    {
+      "bundle_id": "bundle_13_defect_boundary_exclusive",
+      "is_reserved": true,
+      "expected_status": "CHANGES_REQUIRED",
+      "actual_status": "CHANGES_REQUIRED",
+      "correct": true,
+      "blocker_findings_count": 1,
+      "total_findings_count": 1,
+      "counterexamples_count": 1,
+      "runtime_ms": 0.88
+    },
+    {
+      "bundle_id": "bundle_14_defect_time_unit_mismatch",
+      "is_reserved": true,
+      "expected_status": "CHANGES_REQUIRED",
+      "actual_status": "CHANGES_REQUIRED",
+      "correct": true,
+      "blocker_findings_count": 1,
+      "total_findings_count": 1,
+      "counterexamples_count": 1,
+      "runtime_ms": 1.23
+    },
+    {
+      "bundle_id": "bundle_15_paired_variant_behavior_change",
+      "is_reserved": true,
+      "expected_status": "CHANGES_REQUIRED",
+      "actual_status": "CHANGES_REQUIRED",
+      "correct": true,
+      "blocker_findings_count": 1,
+      "total_findings_count": 1,
+      "counterexamples_count": 1,
+      "runtime_ms": 1.2
+    },
+    {
+      "bundle_id": "bundle_16_paired_variant_renamed_isomorphic",
+      "is_reserved": true,
+      "expected_status": "PASS",
+      "actual_status": "PASS",
+      "correct": true,
+      "blocker_findings_count": 0,
+      "total_findings_count": 0,
+      "counterexamples_count": 0,
+      "runtime_ms": 0.86
+    }
+  ]
+}
