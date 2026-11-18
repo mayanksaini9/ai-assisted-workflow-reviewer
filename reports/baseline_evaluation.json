@@ -17,8 +17,8 @@
     "unsupported_or_hallucinated_findings_flagged": 0
   },
   "resource_usage": {
-    "total_runtime_ms": 1.73,
-    "avg_runtime_ms": 0.11,
+    "total_runtime_ms": 1.42,
+    "avg_runtime_ms": 0.09,
     "model_calls": 0,
     "retries": 0,
     "prompt_tokens": 0,
@@ -35,7 +35,7 @@
       "blocker_findings_count": 0,
       "total_findings_count": 0,
       "counterexamples_count": 0,
-      "runtime_ms": 0.27
+      "runtime_ms": 0.26
     },
     {
       "bundle_id": "bundle_02_valid_reordered_records",
@@ -46,7 +46,7 @@
       "blocker_findings_count": 0,
       "total_findings_count": 0,
       "counterexamples_count": 0,
-      "runtime_ms": 0.13
+      "runtime_ms": 0.11
     },
     {
       "bundle_id": "bundle_03_valid_unusual_formulation",
@@ -57,7 +57,7 @@
       "blocker_findings_count": 1,
       "total_findings_count": 1,
       "counterexamples_count": 0,
-      "runtime_ms": 0.11
+      "runtime_ms": 0.16
     },
     {
       "bundle_id": "bundle_04_defect_unapproved_threshold",
@@ -68,7 +68,7 @@
       "blocker_findings_count": 1,
       "total_findings_count": 1,
       "counterexamples_count": 0,
-      "runtime_ms": 0.09
+      "runtime_ms": 0.1
     },
     {
       "bundle_id": "bundle_05_defect_approval_conflict",
@@ -79,7 +79,7 @@
       "blocker_findings_count": 1,
       "total_findings_count": 1,
       "counterexamples_count": 0,
-      "runtime_ms": 0.14
+      "runtime_ms": 0.12
     },
     {
       "bundle_id": "bundle_06_defect_omitted_source_req",
@@ -90,7 +90,7 @@
       "blocker_findings_count": 1,
       "total_findings_count": 1,
       "counterexamples_count": 0,
-      "runtime_ms": 0.11
+      "runtime_ms": 0.06
     },
     {
       "bundle_id": "bundle_07_defect_precedence_inversion",
@@ -101,7 +101,7 @@
       "blocker_findings_count": 0,
       "total_findings_count": 0,
       "counterexamples_count": 0,
-      "runtime_ms": 0.09
+      "runtime_ms": 0.1
     },
     {
       "bundle_id": "bundle_08_defect_code_disagreement",
@@ -112,7 +112,7 @@
       "blocker_findings_count": 0,
       "total_findings_count": 0,
       "counterexamples_count": 0,
-      "runtime_ms": 0.11
+      "runtime_ms": 0.06
     },
     {
       "bundle_id": "bundle_09_defect_dead_branch_interaction",
@@ -123,7 +123,7 @@
       "blocker_findings_count": 1,
       "total_findings_count": 1,
       "counterexamples_count": 0,
-      "runtime_ms": 0.09
+      "runtime_ms": 0.06
     },
     {
       "bundle_id": "bundle_10_incomplete_unsupported_language",
@@ -134,7 +134,7 @@
       "blocker_findings_count": 1,
       "total_findings_count": 1,
       "counterexamples_count": 0,
-      "runtime_ms": 0.08
+      "runtime_ms": 0.09
     },
     {
       "bundle_id": "bundle_11_incomplete_missing_evidence",
@@ -145,7 +145,7 @@
       "blocker_findings_count": 0,
       "total_findings_count": 0,
       "counterexamples_count": 0,
-      "runtime_ms": 0.08
+      "runtime_ms": 0.04
     },
     {
       "bundle_id": "bundle_12_incomplete_prompt_injection",
@@ -156,7 +156,7 @@
       "blocker_findings_count": 0,
       "total_findings_count": 0,
       "counterexamples_count": 0,
-      "runtime_ms": 0.07
+      "runtime_ms": 0.04
     },
     {
       "bundle_id": "bundle_13_defect_boundary_exclusive",
@@ -167,7 +167,7 @@
       "blocker_findings_count": 1,
       "total_findings_count": 1,
       "counterexamples_count": 0,
-      "runtime_ms": 0.08
+      "runtime_ms": 0.05
     },
     {
       "bundle_id": "bundle_14_defect_time_unit_mismatch",
@@ -178,7 +178,7 @@
       "blocker_findings_count": 1,
       "total_findings_count": 1,
       "counterexamples_count": 0,
-      "runtime_ms": 0.09
+      "runtime_ms": 0.06
     },
     {
       "bundle_id": "bundle_15_paired_variant_behavior_change",
@@ -189,7 +189,7 @@
       "blocker_findings_count": 1,
       "total_findings_count": 1,
       "counterexamples_count": 0,
-      "runtime_ms": 0.1
+      "runtime_ms": 0.05
     },
     {
       "bundle_id": "bundle_16_paired_variant_renamed_isomorphic",
@@ -200,7 +200,7 @@
       "blocker_findings_count": 1,
       "total_findings_count": 1,
       "counterexamples_count": 0,
-      "runtime_ms": 0.09
+      "runtime_ms": 0.05
     }
   ]
 }
